@@ -1,12 +1,17 @@
-from .models import Post
+"""Project forms."""
+from django.forms import ModelForm, Textarea, TextInput
 
-from django.forms import ModelForm, TextInput, Textarea
+from .models import Post
 
 
 class PostForm(ModelForm):
+    """Post Form."""
+
     class Meta:
+        """Form Meta."""
+
         model = Post
-        fields =['title', 'description', 'content']
+        fields = ['title', 'description', 'content']
         widgets = {
             "title": TextInput(attrs={
                 "class": "form-control",
